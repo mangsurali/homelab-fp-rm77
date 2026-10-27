@@ -1,9 +1,12 @@
 #!/bin/sh
 
-HOST_IP="${HOST_IP:-127.0.0.1}"
+if [ -z "${HOST_IP:-}" ]; then
+    HOST_IP="$(ip route get 1.1.1.1 2>/dev/null | awk '{print $7; exit}')"
+    HOST_IP="${HOST_IP:-10.160.4.43}"
+fi
 
-INGRESS_HTTP_PORT="${INGRESS_HTTP_PORT:-28080}"
-INGRESS_HTTPS_PORT="${INGRESS_HTTPS_PORT:-28443}"
+INGRESS_HTTP_PORT="${INGRESS_HTTP_PORT:-80}"
+INGRESS_HTTPS_PORT="${INGRESS_HTTPS_PORT:-443}"
 
 INGRESS_CLASS="${INGRESS_CLASS:-nginx}"
 
@@ -16,7 +19,3 @@ export INGRESS_HTTPS_PORT
 export INGRESS_CLASS
 export HTTP_BASE_URL
 export HTTPS_BASE_URL
-
-#HOST_IP=127.0.0.1
-#HOST_IP=10.28.84.254
-#export HOST_IP

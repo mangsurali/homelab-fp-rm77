@@ -111,7 +111,7 @@ SAMPLE_INTERVAL=1
 For a remotely reachable cluster, export the address once:
 
 ```sh
-export HOST_IP=10.28.84.254
+export HOST_IP=10.160.4.43
 ```
 
 The default Prometheus URL is then constructed as:
@@ -146,7 +146,7 @@ OK: Prometheus is ready.
 For the remote cluster:
 
 ```sh
-export HOST_IP=10.28.84.254
+export HOST_IP=10.160.4.43
 ./scripts/check-prometheus.sh
 ```
 
@@ -440,7 +440,7 @@ Assume the application and workload experiment have already been run.
 Set the remote cluster once if necessary:
 
 ```sh
-export HOST_IP=10.28.84.254
+export HOST_IP=10.160.4.43
 ```
 
 Verify Prometheus:

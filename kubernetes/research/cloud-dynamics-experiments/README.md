@@ -99,6 +99,7 @@ After extracting the bundle:
 ```text
 cloud-dynamics-experiments/
 ├── README.md
+├── run-and-collect.sh            <-- Quick launcher for run-and-collect
 ├── config/
 │   └── experiment.env
 ├── scenarios/
@@ -110,7 +111,9 @@ cloud-dynamics-experiments/
 ├── scripts/
 │   ├── check-environment.sh
 │   ├── run-experiment.sh
-│   └── run-all.sh
+│   ├── run-all.sh
+│   ├── run-and-collect.sh        <-- Automated experiment + metrics collection
+│   └── run-all-and-collect.sh    <-- Run all scenarios + collect metrics
 ├── loadgen/
 │   └── loadgen.py
 └── results/
@@ -184,7 +187,7 @@ cd cloud-dynamics-applications
 If the Kubernetes cluster is reachable at another address, export the address once before using either bundle:
 
 ```sh
-export HOST_IP=10.28.84.254
+export HOST_IP=10.160.4.43
 ```
 
 Then:
@@ -242,7 +245,7 @@ The runner gives an already-exported `HOST_IP` precedence over the value stored 
 Therefore this is sufficient for a remote cluster:
 
 ```sh
-export HOST_IP=10.28.84.254
+export HOST_IP=10.160.4.43
 ```
 
 There is no need to edit the configuration merely to change the cluster address.
@@ -363,7 +366,7 @@ OK: target is reachable.
 For a remote environment:
 
 ```sh
-export HOST_IP=10.28.84.254
+export HOST_IP=10.160.4.43
 export TARGET_URL="http://stateless-api.${HOST_IP}.sslip.io/"
 
 ./scripts/check-environment.sh
@@ -1185,7 +1188,7 @@ The default address is `127.0.0.1`.
 Set the cluster address once:
 
 ```sh
-export HOST_IP=10.28.84.254
+export HOST_IP=10.160.4.43
 ```
 
 Select an application:
@@ -1280,3 +1283,135 @@ empirical analysis
 ```
 
 This preserves the separation between **controlled workload generation**, **system observation**, and **data analysis**, while keeping them linked by experiment identity and measurement time.
+
+---
+
+# 34. Automated End-to-End Workflow (`run-and-collect.sh`)
+
+To streamline testing and metrics harvesting, the script `run-and-collect.sh` bridges this experiment bundle directly with `cloud-dynamics-metrics`.
+
+It executes a scenario and immediately collects, aligns, and merges Prometheus metrics for the exact measurement window in a single automated step:
+
+```text
+Target Application & Prometheus Preflight Check
+                    |
+                    v
+       Execute Workload Experiment (loadgen)
+                    |
+                    +--> workload.csv
+                    +--> metadata.json
+                    +--> measurement-window.env
+                    |
+                    v
+    Query Prometheus for [start_epoch, end_epoch]
+                    |
+                    +--> metrics/*.csv
+                    |
+                    v
+     Timestamp Join (workload + system metrics)
+                    |
+                    v
+               combined.csv
+```
+
+### Quickstart
+
+From the `cloud-dynamics-experiments` directory:
+
+```sh
+# 1. Run a single scenario (e.g. constant) and automatically collect metrics:
+./scripts/run-and-collect.sh scenarios/constant.env
+
+# Alternatively using the root wrapper:
+./run-and-collect.sh scenarios/constant.env
+```
+
+### Specifying Target Application
+
+By default, the script targets `stateless-api` (or infers the application name from `TARGET_URL`). To test another application (e.g., `cpu-bound`, `microservices`):
+
+```sh
+# Specify application as positional argument:
+./scripts/run-and-collect.sh scenarios/ramp.env cpu-bound
+
+# Or using the --app flag:
+./scripts/run-and-collect.sh scenarios/ramp.env --app cpu-bound
+```
+
+### Running All Scenarios
+
+To run all 5 standard scenarios (`constant`, `ramp`, `burst`, `periodic`, `variable`) sequentially and collect metrics for each:
+
+```sh
+./scripts/run-all-and-collect.sh stateless-api
+# or:
+./scripts/run-and-collect.sh --all stateless-api
+```
+
+### Options and Flags
+
+```text
+Usage:
+  ./scripts/run-and-collect.sh [OPTIONS] <scenario> [app_name]
+  ./scripts/run-and-collect.sh [OPTIONS] --all [app_name]
+
+Arguments:
+  <scenario>        Scenario file path (e.g. scenarios/constant.env)
+                    or profile name (constant, ramp, burst, periodic, variable).
+  [app_name]        Target application name (e.g. stateless-api, cpu-bound, microservices).
+                    If omitted, inferred from TARGET_URL or defaults to stateless-api.
+
+Options:
+  --all             Run all 5 standard scenarios sequentially.
+  --app <name>      Explicitly specify the application name.
+  --target <url>    Explicitly specify the target URL.
+  --prom <url>      Explicitly specify Prometheus URL (default: http://prometheus.${HOST_IP}.sslip.io).
+  --namespace <ns>  Kubernetes namespace of the application (default: cloud-dynamics).
+  --replicates <N>  Run N replicates for the specified scenario(s).
+  --skip-warmup     Skip warmup period (WARMUP_SECONDS=0).
+  --skip-cooldown   Skip cooldown period (COOLDOWN_SECONDS=0).
+  --check-only      Run preflight reachability and readiness checks without running load.
+  -h, --help        Show usage message.
+```
+
+### Output Structure
+
+Each completed run produces a self-contained directory under `results/<experiment-id>/`:
+
+```text
+results/<experiment-id>/
+├── experiment.env
+├── scenario.env
+├── metadata.json
+├── run.log
+├── workload.csv                  # Client-side observations (RPS, latency, errors)
+├── measurement-window.env        # Exact timestamp boundary [start, end]
+├── metrics/                      # Raw Prometheus metric exports
+│   ├── cpu_usage.csv
+│   ├── cpu_throttled.csv
+│   ├── memory_working_set.csv
+│   ├── network_rx.csv
+│   ├── network_tx.csv
+│   ├── restarts.csv
+│   ├── ready_pods.csv
+│   ├── linkerd_request_rate.csv
+│   ├── linkerd_success_rate.csv
+│   ├── linkerd_latency_p95.csv
+│   ├── collection-status.csv
+│   └── collection-metadata.json
+└── combined.csv                  # Final merged research dataset!
+```
+
+### Inspecting the Merged Dataset
+
+```sh
+# View column headers:
+head -n 1 results/<experiment-id>/combined.csv
+
+# View first 10 data points:
+head -n 11 results/<experiment-id>/combined.csv
+
+# Check metric collection status:
+cat results/<experiment-id>/metrics/collection-status.csv
+```
+

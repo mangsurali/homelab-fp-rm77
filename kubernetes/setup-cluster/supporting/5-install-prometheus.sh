@@ -22,8 +22,8 @@ echo "Prometheus installation"
 echo "======================================"
 echo
 echo "Host IP        : ${HOST_IP}"
-echo "Prometheus URL : http://${PROM_URL}"
-echo "Grafana URL    : http://${GRAFANA_URL}"
+echo "Prometheus URL : ${PROM_URL}"
+echo "Grafana URL    : ${GRAFANA_URL}"
 echo
 
 

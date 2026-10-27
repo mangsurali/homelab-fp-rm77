@@ -70,8 +70,9 @@ def main():
     datasets={}
     status=[]
     outdir=exp/"metrics"; outdir.mkdir(exist_ok=True)
+    app_escaped=re.escape(app).replace(r"\-","-")
     for name,q in qenv.items():
-        q=q.replace("__NAMESPACE__",a.namespace).replace("__APP__",re.escape(app))
+        q=q.replace("__NAMESPACE__",a.namespace).replace("__APP__",app_escaped)
         try:
             rows=flatten(prom_range(a.prometheus_url,q,start,end,step))
             write_metric(outdir/(name.lower()+".csv"),rows)

@@ -88,7 +88,7 @@ The scripts also accept exported environment variables. An exported value takes 
 For a cluster reachable at `10.28.84.254`, configure it once:
 
 ```sh
-export HOST_IP=10.28.84.254
+export HOST_IP=10.160.4.43
 ```
 
 Verify:
@@ -171,7 +171,7 @@ http://stateless-api.127.0.0.1.sslip.io/
 If you previously ran:
 
 ```sh
-export HOST_IP=10.28.84.254
+export HOST_IP=10.160.4.43
 ```
 
 the exact same deployment command:
@@ -215,7 +215,7 @@ The script automatically uses the current `HOST_IP`.
 For example, after:
 
 ```sh
-export HOST_IP=10.28.84.254
+export HOST_IP=10.160.4.43
 ```
 
 it tests:
@@ -492,7 +492,7 @@ For a cluster reachable at `10.28.84.254`, a complete shell session becomes:
 ```sh
 cd cloud-dynamics-applications
 
-export HOST_IP=10.28.84.254
+export HOST_IP=10.160.4.43
 
 ./scripts/build-and-load.sh stateless-api
 ./scripts/deploy.sh stateless-api

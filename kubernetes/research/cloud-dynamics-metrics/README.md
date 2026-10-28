@@ -310,34 +310,38 @@ Run:
 head "$EXP/combined.csv"
 ```
 
-The file begins with workload columns:
+The unified dataset aligns workload execution with system and service mesh metrics across 25 standardized columns:
 
-```text
-timestamp_epoch
-elapsed_s
-target_rps
-sent
-success
-failed
-achieved_rps
-mean_latency_ms
-p95_latency_ms
-```
+### 1. Workload Generator Telemetry (Client-Side)
+* **`timestamp_epoch`**: Unix Epoch seconds (microsecond resolution) serving as the temporal join key.
+* **`elapsed_s`**: Elapsed time in seconds since the active measurement window began.
+* **`target_rps`**: Target / offered load demand rate calculated by the workload mathematical profile (e.g., ramp, constant, periodic, burst).
+* **`sent`**: Total HTTP requests dispatched into the network during this 1-second sample interval.
+* **`success`**: HTTP requests completed and received with successful HTTP status codes ($200 \le \text{status} < 400$) during this interval.
+* **`failed`**: HTTP requests that completed with errors (HTTP status $\ge 400$, timeouts, connection refused/reset) during this interval.
+* **`achieved_rps`**: Actual request dispatch rate achieved by the client ($\frac{\text{sent}}{\text{sample\_interval}}$). Under normal conditions without client lag, equals `sent`.
+* **`mean_latency_ms`**: Arithmetic mean round-trip latency in milliseconds for requests completed within this interval.
+* **`p95_latency_ms`**: 95th percentile round-trip latency in milliseconds for requests completed within this interval.
 
-and adds metric columns such as:
+### 2. Container & Kubernetes Metrics (cAdvisor & Kube-State-Metrics)
+* **`CPU_USAGE`**: CPU core utilization per container (`container_cpu_usage_seconds_total`).
+* **`CPU_THROTTLED`**: CFS throttling time seconds/sec (`container_cpu_cfs_throttled_seconds_total`).
+* **`MEMORY_WORKING_SET`**: Memory working set bytes (`container_memory_working_set_bytes`).
+* **`NETWORK_RX`**: Network receive bandwidth bytes/sec (`container_network_receive_bytes_total`).
+* **`NETWORK_TX`**: Network transmit bandwidth bytes/sec (`container_network_transmit_bytes_total`).
+* **`RESTARTS`**: Cumulative pod restart count (`kube_pod_container_status_restarts_total`).
+* **`READY_PODS`**: Count of pods passing readiness probe and serving traffic (`kube_pod_status_ready`).
 
-```text
-CPU_USAGE
-CPU_THROTTLED
-MEMORY_WORKING_SET
-NETWORK_RX
-NETWORK_TX
-RESTARTS
-READY_PODS
-LINKERD_REQUEST_RATE
-LINKERD_SUCCESS_RATE
-LINKERD_LATENCY_P95
-```
+### 3. Service Mesh & Goodput Metrics (Linkerd Inbound Proxy)
+* **`LINKERD_REQUEST_RATE`**: Inbound HTTP request arrival rate in RPS (excluding health probes).
+* **`LINKERD_GOODPUT_RPS`**: True application Goodput: successful non-5xx request completion rate in RPS.
+* **`LINKERD_SUCCESS_RATE`**: Inbound HTTP success ratio ($0.0 - 1.0$).
+* **`LINKERD_FAILED_RPS`**: Inbound HTTP error / failure rate in RPS.
+* **`LINKERD_LATENCY_P50`**: Median (50th percentile) proxy-observed latency in ms.
+* **`LINKERD_LATENCY_P95`**: 95th percentile proxy-observed latency in ms.
+* **`LINKERD_LATENCY_P99`**: Tail (99th percentile) proxy-observed latency in ms.
+* **`LINKERD_THROUGHPUT_BYTES`**: Inbound TCP payload bytes/sec transmitted back to clients.
+* **`LINKERD_TCP_CONNECTIONS`**: Inbound concurrent TCP connections maintained by the proxy.
 
 This produces a time-aligned table relating workload input to observed system response.
 

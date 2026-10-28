@@ -1421,3 +1421,64 @@ head -n 11 results/<experiment-id>/combined.csv
 cat results/<experiment-id>/metrics/collection-status.csv
 ```
 
+---
+
+# 35. Dataset Schema & Column Reference (`combined.csv`)
+
+`combined.csv` is the core unified dataset generated at the end of each experiment run. It aligns **client-side workload telemetry** (`workload.csv`) with **Prometheus system and service mesh metrics** (`metrics/*.csv`) using timestamps (`timestamp_epoch`).
+
+Below is the complete definition and mathematical/operational meaning of every column in `combined.csv`:
+
+### A. Client-Side Workload Columns (`loadgen.py`)
+
+| Column | Unit | Description |
+| :--- | :--- | :--- |
+| `timestamp_epoch` | Unix Epoch (seconds) | High-precision timestamp (microsecond resolution, e.g. `1793147655.052688`) when this 1-second sample interval was recorded. Serves as the temporal join key. |
+| `elapsed_s` | Seconds | Elapsed time since the active measurement window began (excludes pre-test warmup). |
+| `target_rps` | Requests/sec | **Target / Offered Load Demand Rate**: The desired request rate calculated mathematically by the scenario profile function (e.g. constant value, linear ramp formula $R(t) = R_{start} + \frac{t}{D}(R_{end}-R_{start})$, sinusoidal periodic curve, or burst level). |
+| `sent` | Integer count | **Dispatched Request Count**: The total number of HTTP requests actually dispatched (submitted to worker threads) by the client load generator into the network within this 1-second sample interval. |
+| `success` | Integer count | **Successful Completed Responses**: The number of HTTP requests whose responses were received and finished within this sample interval with a successful HTTP status code ($200 \le \text{status} < 400$). |
+| `failed` | Integer count | **Failed Completed Responses**: The number of HTTP requests that finished within this sample interval but encountered an error. Failures include: HTTP status $\ge 400$ (e.g. 500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable, 504 Gateway Timeout), client connection timeouts (`REQUEST_TIMEOUT`, default 5s), connection refused, or TCP connection reset. |
+| `achieved_rps` | Requests/sec | **Actual Offered Load Rate**: The dispatch rate achieved by the client generator, computed as $\frac{\text{sent}}{\text{sample\_interval}}$. With standard 1-second sampling, `achieved_rps` equals `sent`. If the load generator host becomes resource-starved or thread-pool constrained, `achieved_rps` will drop below `target_rps`. |
+| `mean_latency_ms` | Milliseconds | Arithmetic mean of the end-to-end round-trip latency for all requests that completed within this sample interval, as measured by the client. |
+| `p95_latency_ms` | Milliseconds | 95th percentile round-trip latency (ms) of all requests completed within this sample interval. 95% of completed requests experienced latency at or below this value. |
+
+> [!NOTE]
+> **Understanding the Relationship Between `target_rps`, `sent`, `achieved_rps`, `success`, and `failed`:**
+> * `target_rps` is the **theoretical load demand** required by the test design.
+> * `sent` and `achieved_rps` reflect the **actual load pushed** by the client into the network.
+> * `success` and `failed` reflect **completed responses received** back from the server during that second.
+> * Under low server load (latency < 20ms), requests complete almost instantaneously within the same sample second ($\text{sent} \approx \text{success}$).
+> * Under high server load or saturation (latency climbing to multiple seconds), requests sent in second $t$ queue up and complete in second $t + \Delta$. When load generation finishes ($\text{sent} = 0$), remaining queued requests continue to complete during the **drain phase**, where `sent = 0` while `success` and `failed` remain positive until the queue is exhausted.
+
+---
+
+### B. Kubernetes & Container Resource Metrics (Prometheus / cAdvisor)
+
+| Column | Unit | PromQL Metric Source | Description |
+| :--- | :--- | :--- | :--- |
+| `CPU_USAGE` | Cores (vCPU) | `container_cpu_usage_seconds_total` | Average CPU core consumption of the application container pods over the sample rate window (`[1m]`). |
+| `CPU_THROTTLED` | Seconds/sec | `container_cpu_cfs_throttled_seconds_total` | CFS CPU throttling duration per second. A non-zero value indicates the container has hit its Kubernetes `limits.cpu` quota. |
+| `MEMORY_WORKING_SET` | Bytes | `container_memory_working_set_bytes` | Working set memory footprint of the application container. This is the memory metric Kubernetes uses for OOM-kill decisions. |
+| `NETWORK_RX` | Bytes/sec | `container_network_receive_bytes_total` | Network ingress throughput received by the application pod network interface. |
+| `NETWORK_TX` | Bytes/sec | `container_network_transmit_bytes_total` | Network egress throughput transmitted by the application pod network interface. |
+| `RESTARTS` | Integer count | `kube_pod_container_status_restarts_total` | Cumulative container restart count. Helps identify pod crashes (OOM, panic) during load spikes. |
+| `READY_PODS` | Integer count | `kube_pod_status_ready` | Count of pod replicas currently passing readiness probes and serving application traffic. |
+
+---
+
+### C. Linkerd Service Mesh Inbound & Goodput Metrics
+
+| Column | Unit | PromQL Metric Source | Description |
+| :--- | :--- | :--- | :--- |
+| `LINKERD_REQUEST_RATE` | Requests/sec | `response_total{direction="inbound"}` | Total inbound HTTP request arrival rate received by the application pod's Linkerd sidecar proxy (excluding internal health probes). |
+| `LINKERD_GOODPUT_RPS` | Requests/sec | `response_total{classification="success"}` | **True Application Goodput**: Inbound request processing rate that completed successfully without server error (non-5xx HTTP responses). Measures useful work completed by the server. |
+| `LINKERD_SUCCESS_RATE` | Ratio ($0.0 - 1.0$) | `response_total{success} / response_total{all}` | Ratio of successful requests to total requests handled by the proxy. 1.0 indicates 100% success; values below 1.0 indicate HTTP 5xx or server drops. |
+| `LINKERD_FAILED_RPS` | Requests/sec | `response_total{classification!="success"}` | Rate of inbound requests resulting in server failure (HTTP 5xx, timeouts, connection drops) as observed by the proxy. |
+| `LINKERD_LATENCY_P50` | Milliseconds | `response_latency_ms_bucket` (P50) | Median latency of inbound request handling observed at the Linkerd proxy boundary. |
+| `LINKERD_LATENCY_P95` | Milliseconds | `response_latency_ms_bucket` (P95) | 95th percentile latency of inbound request handling observed at the Linkerd proxy boundary. |
+| `LINKERD_LATENCY_P99` | Milliseconds | `response_latency_ms_bucket` (P99) | 99th percentile (tail) latency of inbound request handling observed at the Linkerd proxy boundary. |
+| `LINKERD_THROUGHPUT_BYTES` | Bytes/sec | `tcp_write_bytes_total` | Inbound TCP write throughput delivered from the Linkerd proxy back to the client. |
+| `LINKERD_TCP_CONNECTIONS` | Integer count | `tcp_open_connections` | Count of active inbound TCP connections currently held open by the proxy. Escalates during queueing and concurrency saturation. |
+
+

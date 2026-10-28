@@ -1394,9 +1394,15 @@ results/<experiment-id>/
 │   ├── network_tx.csv
 │   ├── restarts.csv
 │   ├── ready_pods.csv
-│   ├── linkerd_request_rate.csv
-│   ├── linkerd_success_rate.csv
-│   ├── linkerd_latency_p95.csv
+│   ├── linkerd_request_rate.csv     # Inbound total throughput (RPS)
+│   ├── linkerd_goodput_rps.csv      # Inbound successful request rate (Goodput RPS)
+│   ├── linkerd_success_rate.csv     # Success rate ratio (0.0 - 1.0)
+│   ├── linkerd_failed_rps.csv       # Error / failed request rate
+│   ├── linkerd_latency_p50.csv      # Median latency (ms)
+│   ├── linkerd_latency_p95.csv      # P95 latency (ms)
+│   ├── linkerd_latency_p99.csv      # P99 latency (ms)
+│   ├── linkerd_throughput_bytes.csv # TCP write throughput delivered (bytes/s)
+│   ├── linkerd_tcp_connections.csv  # Active TCP connections
 │   ├── collection-status.csv
 │   └── collection-metadata.json
 └── combined.csv                  # Final merged research dataset!

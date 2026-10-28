@@ -355,6 +355,39 @@ echo
 
 
 # ============================================================
+# 12b. CONFIGURE PROMETHEUS PODMONITOR FOR LINKERD
+# ============================================================
+
+section "12b. Configure Prometheus PodMonitor for Linkerd proxies"
+
+if kubectl get crd podmonitors.monitoring.coreos.com >/dev/null 2>&1; then
+    cat <<EOF | kubectl apply -f -
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: linkerd-proxies
+  namespace: monitoring
+  labels:
+    release: monitoring
+spec:
+  namespaceSelector:
+    any: true
+  selector:
+    matchLabels:
+      linkerd.io/control-plane-ns: linkerd
+  podMetricsEndpoints:
+  - port: linkerd-admin
+    path: /metrics
+    interval: 10s
+    scrapeTimeout: 10s
+EOF
+    echo "PodMonitor 'linkerd-proxies' configured in monitoring namespace."
+else
+    echo "PodMonitor CRD not found; skipping PodMonitor configuration."
+fi
+
+
+# ============================================================
 # 13. VERIFY DNS
 # ============================================================
 

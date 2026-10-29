@@ -14,16 +14,16 @@ M=http://microservices.10.160.4.43.sslip.io/
 S=http://stateless-api.10.160.4.43.sslip.io/
 C=http://cpu-bound.10.160.4.43.sslip.io/
 
-# run $S constant 1
-# for i in 1 2 3; do run $S ramp $i; done
-# for i in 1 2 3; do run $S burst $i; done
+run $S constant 1
+for i in 1 2 3; do run $S ramp $i; done
+for i in 1 2 3; do run $S burst $i; done
 
-# run $C constant 1
-# for i in 1 2 3; do run $C ramp $i; done
+run $C constant 1
+for i in 1 2 3; do run $C ramp $i; done
 for i in 1 2 3; do run $C burst $i; done
 
-# run $M constant 1
-# for i in 1 2 3; do run $M ramp $i; done
-# for i in 1 2 3; do run $M burst $i; done
+run $M constant 1
+for i in 1 2 3; do run $M ramp $i; done
+for i in 1 2 3; do run $M burst $i; done
 
 echo "===== $(date '+%H:%M:%S') SEMUA SELESAI" | tee -a $LOG

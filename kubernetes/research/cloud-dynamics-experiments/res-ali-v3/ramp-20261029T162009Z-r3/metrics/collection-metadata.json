@@ -1,0 +1,75 @@
+{
+  "experiment_id": "ramp-20261029T162009Z-r3",
+  "application": "cpu-bound",
+  "namespace": "cloud-dynamics",
+  "prometheus_url": "http://prometheus.10.160.4.43.sslip.io/",
+  "start_epoch": 1793290839.0,
+  "end_epoch": 1793294592.0,
+  "step": 1.0,
+  "metrics": {
+    "CPU_USAGE": {
+      "status": "ok",
+      "rows": 7508
+    },
+    "CPU_THROTTLED": {
+      "status": "ok",
+      "rows": 0
+    },
+    "MEMORY_WORKING_SET": {
+      "status": "ok",
+      "rows": 7508
+    },
+    "NETWORK_RX": {
+      "status": "ok",
+      "rows": 7508
+    },
+    "NETWORK_TX": {
+      "status": "ok",
+      "rows": 7508
+    },
+    "RESTARTS": {
+      "status": "ok",
+      "rows": 7508
+    },
+    "READY_PODS": {
+      "status": "ok",
+      "rows": 3754
+    },
+    "LINKERD_REQUEST_RATE": {
+      "status": "ok",
+      "rows": 3754
+    },
+    "LINKERD_GOODPUT_RPS": {
+      "status": "ok",
+      "rows": 3754
+    },
+    "LINKERD_SUCCESS_RATE": {
+      "status": "ok",
+      "rows": 3754
+    },
+    "LINKERD_FAILED_RPS": {
+      "status": "ok",
+      "rows": 3754
+    },
+    "LINKERD_LATENCY_P50": {
+      "status": "ok",
+      "rows": 3754
+    },
+    "LINKERD_LATENCY_P95": {
+      "status": "ok",
+      "rows": 3754
+    },
+    "LINKERD_LATENCY_P99": {
+      "status": "ok",
+      "rows": 3754
+    },
+    "LINKERD_THROUGHPUT_BYTES": {
+      "status": "ok",
+      "rows": 3754
+    },
+    "LINKERD_TCP_CONNECTIONS": {
+      "status": "ok",
+      "rows": 3754
+    }
+  }
+}

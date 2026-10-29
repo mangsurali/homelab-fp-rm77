@@ -1,0 +1,4 @@
+started_utc=2026-10-26T18:08:15Z
+experiment_id=burst-20261026T180815Z-r2
+profile=burst
+target_url=http://cpu-bound.127.0.0.1.sslip.io/

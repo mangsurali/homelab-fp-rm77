@@ -1,0 +1,51 @@
+{
+  "experiment_id": "ramp-20261026T174500Z-r2",
+  "application": "cpu-bound",
+  "namespace": "cloud-dynamics",
+  "prometheus_url": "http://prometheus.127.0.0.1.sslip.io/",
+  "start_epoch": 1793036734.0,
+  "end_epoch": 1793037925.0,
+  "step": 1.0,
+  "metrics": {
+    "CPU_USAGE": {
+      "status": "ok",
+      "rows": 2384
+    },
+    "CPU_THROTTLED": {
+      "status": "ok",
+      "rows": 2384
+    },
+    "MEMORY_WORKING_SET": {
+      "status": "ok",
+      "rows": 2384
+    },
+    "NETWORK_RX": {
+      "status": "ok",
+      "rows": 2384
+    },
+    "NETWORK_TX": {
+      "status": "ok",
+      "rows": 2384
+    },
+    "RESTARTS": {
+      "status": "ok",
+      "rows": 2384
+    },
+    "READY_PODS": {
+      "status": "ok",
+      "rows": 1192
+    },
+    "LINKERD_REQUEST_RATE": {
+      "status": "ok",
+      "rows": 0
+    },
+    "LINKERD_SUCCESS_RATE": {
+      "status": "ok",
+      "rows": 0
+    },
+    "LINKERD_LATENCY_P95": {
+      "status": "ok",
+      "rows": 0
+    }
+  }
+}

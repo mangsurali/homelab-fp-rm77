@@ -1,0 +1,25 @@
+{
+  "experiment_id": "burst-20261027T234735Z-r3",
+  "profile": "burst",
+  "target_url": "http://cpu-bound.10.160.4.43.sslip.io/",
+  "host_ip": "10.160.4.43",
+  "measurement_start_epoch": 1793144886,
+  "measurement_end_epoch": 1793145536,
+  "sample_interval_seconds": 1.0,
+  "warmup_seconds": 30,
+  "cooldown_seconds": 15,
+  "replicate": 3,
+  "application": {
+    "name": "cpu-bound",
+    "architecture": "unspecified",
+    "replicas": "unspecified",
+    "cpu_request": "unspecified",
+    "cpu_limit": "unspecified",
+    "memory_request": "unspecified",
+    "memory_limit": "unspecified"
+  },
+  "runtime": {
+    "python": "3.10.12",
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.35"
+  }
+}

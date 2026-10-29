@@ -1,8 +1,20 @@
 #!/usr/bin/env python3
 import argparse,csv,json,os,re,sys,time
 from pathlib import Path
-from urllib.parse import urlencode
+from urllib.parse import urlencode, urlparse
 from urllib.request import urlopen,Request
+
+def infer_app_from_target(target_url):
+    if not target_url:
+        return ""
+    try:
+        host = urlparse(target_url).hostname or ""
+        prefix = host.split(".")[0]
+        if prefix and prefix not in ("app", "localhost", "127"):
+            return prefix
+    except Exception:
+        pass
+    return ""
 
 def parse_env(path):
     out={}
@@ -62,6 +74,10 @@ def main():
     win=parse_env(exp/"measurement-window.env")
     meta=json.loads((exp/"metadata.json").read_text())
     app=a.app or meta.get("application",{}).get("name","")
+    if not app or app=="cloud-dynamics-app" or app=="unspecified":
+        inferred = infer_app_from_target(meta.get("target_url",""))
+        if inferred:
+            app = inferred
     if not app or app=="cloud-dynamics-app" or app=="unspecified":
         raise SystemExit("Application name is missing. Set APPLICATION_NAME in experiment metadata or pass --app.")
     start=float(win["MEASUREMENT_START_EPOCH"]); end=float(win["MEASUREMENT_END_EPOCH"])

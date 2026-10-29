@@ -52,6 +52,13 @@ HOST_IP=${HOST_IP:-127.0.0.1}
 TARGET_HOST=${TARGET_HOST:-app.${HOST_IP}.sslip.io}
 TARGET_URL=${TARGET_URL:-${TARGET_SCHEME:-http}://${TARGET_HOST}${TARGET_PATH:-/}}
 
+if [ -z "${APPLICATION_NAME-}" ] || [ "$APPLICATION_NAME" = "cloud-dynamics-app" ] || [ "$APPLICATION_NAME" = "unspecified" ]; then
+    INFERRED=$(echo "$TARGET_URL" | sed -E 's|^https?://([^./:]+).*|\1|')
+    if [ -n "$INFERRED" ] && [ "$INFERRED" != "app" ] && [ "$INFERRED" != "localhost" ] && [ "$INFERRED" != "127" ]; then
+        APPLICATION_NAME="$INFERRED"
+    fi
+fi
+
 STAMP=$(date -u +%Y%m%dT%H%M%SZ)
 EXPERIMENT_ID=${PROFILE}-${STAMP}-r${REPLICATE:-1}
 OUT="$ROOT_DIR/results/$EXPERIMENT_ID"

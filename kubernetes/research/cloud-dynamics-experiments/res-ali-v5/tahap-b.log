@@ -1,0 +1,590 @@
+===== 10:40:10 START constant r1 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : constant-20261030T034011Z-r1
+Profile       : constant
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/constant-20261030T034011Z-r1
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793331643
+Measurement ends: 1793331673
+Cool-down: 15s
+Completed: constant-20261030T034011Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/constant-20261030T034011Z-r1/measurement-window.env
+===== 10:43:28 START ramp r1 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T034328Z-r1
+Profile       : ramp
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T034328Z-r1
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793331838
+Measurement ends: 1793332439
+Cool-down: 15s
+Completed: ramp-20261030T034328Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T034328Z-r1/measurement-window.env
+===== 10:56:14 START ramp r2 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T035614Z-r2
+Profile       : ramp
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T035614Z-r2
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793332605
+Measurement ends: 1793333206
+Cool-down: 15s
+Completed: ramp-20261030T035614Z-r2
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T035614Z-r2/measurement-window.env
+===== 11:09:01 START ramp r3 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T040901Z-r3
+Profile       : ramp
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T040901Z-r3
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793333371
+Measurement ends: 1793333972
+Cool-down: 15s
+Completed: ramp-20261030T040901Z-r3
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T040901Z-r3/measurement-window.env
+===== 11:21:47 START burst r1 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T042147Z-r1
+Profile       : burst
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T042147Z-r1
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793334138
+Measurement ends: 1793334738
+Cool-down: 15s
+Completed: burst-20261030T042147Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T042147Z-r1/measurement-window.env
+===== 11:34:33 START burst r2 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T043433Z-r2
+Profile       : burst
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T043433Z-r2
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793334903
+Measurement ends: 1793335503
+Cool-down: 15s
+Completed: burst-20261030T043433Z-r2
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T043433Z-r2/measurement-window.env
+===== 11:47:18 START burst r3 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T044718Z-r3
+Profile       : burst
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T044718Z-r3
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793335669
+Measurement ends: 1793336269
+Cool-down: 15s
+Completed: burst-20261030T044718Z-r3
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T044718Z-r3/measurement-window.env
+===== 12:00:04 START constant r1 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : constant-20261030T050004Z-r1
+Profile       : constant
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/constant-20261030T050004Z-r1
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793336435
+Measurement ends: 1793336470
+Cool-down: 15s
+Completed: constant-20261030T050004Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/constant-20261030T050004Z-r1/measurement-window.env
+===== 12:03:25 START ramp r1 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T050325Z-r1
+Profile       : ramp
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T050325Z-r1
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793336635
+Measurement ends: 1793337241
+Cool-down: 15s
+Completed: ramp-20261030T050325Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T050325Z-r1/measurement-window.env
+===== 12:16:16 START ramp r2 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T051616Z-r2
+Profile       : ramp
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T051616Z-r2
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793337406
+Measurement ends: 1793338011
+Cool-down: 15s
+Completed: ramp-20261030T051616Z-r2
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T051616Z-r2/measurement-window.env
+===== 12:29:06 START ramp r3 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T052906Z-r3
+Profile       : ramp
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T052906Z-r3
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793338176
+Measurement ends: 1793338782
+Cool-down: 15s
+Completed: ramp-20261030T052906Z-r3
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T052906Z-r3/measurement-window.env
+===== 12:41:57 START burst r1 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T054157Z-r1
+Profile       : burst
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T054157Z-r1
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793338947
+Measurement ends: 1793339547
+Cool-down: 15s
+Completed: burst-20261030T054157Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T054157Z-r1/measurement-window.env
+===== 12:54:42 START burst r2 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T055442Z-r2
+Profile       : burst
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T055442Z-r2
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793339712
+Measurement ends: 1793340313
+Cool-down: 15s
+Completed: burst-20261030T055442Z-r2
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T055442Z-r2/measurement-window.env
+===== 13:07:28 START burst r3 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T060728Z-r3
+Profile       : burst
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T060728Z-r3
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793340478
+Measurement ends: 1793341078
+Cool-down: 15s
+Completed: burst-20261030T060728Z-r3
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T060728Z-r3/measurement-window.env
+===== 13:20:13 START constant r1 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : constant-20261030T062013Z-r1
+Profile       : constant
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/constant-20261030T062013Z-r1
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793341244
+Measurement ends: 1793341274
+Cool-down: 15s
+Completed: constant-20261030T062013Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/constant-20261030T062013Z-r1/measurement-window.env
+===== 13:23:29 START ramp r1 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T062329Z-r1
+Profile       : ramp
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T062329Z-r1
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793341439
+Measurement ends: 1793342041
+Cool-down: 15s
+Completed: ramp-20261030T062329Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T062329Z-r1/measurement-window.env
+===== 13:36:16 START ramp r2 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T063616Z-r2
+Profile       : ramp
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T063616Z-r2
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793342206
+Measurement ends: 1793342807
+Cool-down: 15s
+Completed: ramp-20261030T063616Z-r2
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T063616Z-r2/measurement-window.env
+===== 13:49:02 START ramp r3 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T064902Z-r3
+Profile       : ramp
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T064902Z-r3
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793342972
+Measurement ends: 1793343574
+Cool-down: 15s
+Completed: ramp-20261030T064902Z-r3
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T064902Z-r3/measurement-window.env
+===== 14:01:49 START burst r1 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T070149Z-r1
+Profile       : burst
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T070149Z-r1
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793343739
+Measurement ends: 1793344339
+Cool-down: 15s
+Completed: burst-20261030T070149Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T070149Z-r1/measurement-window.env
+===== 14:14:34 START burst r2 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T071434Z-r2
+Profile       : burst
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T071434Z-r2
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793344504
+Measurement ends: 1793345105
+Cool-down: 15s
+Completed: burst-20261030T071434Z-r2
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T071434Z-r2/measurement-window.env
+===== 14:27:20 START burst r3 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T072720Z-r3
+Profile       : burst
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T072720Z-r3
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793345270
+Measurement ends: 1793345870
+Cool-down: 15s
+Completed: burst-20261030T072720Z-r3
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T072720Z-r3/measurement-window.env
+===== 14:40:05 SEMUA SELESAI
+===== 15:22:34 START constant r1 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : constant-20261030T082234Z-r1
+Profile       : constant
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/constant-20261030T082234Z-r1
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793348585
+Measurement ends: 1793348615
+Cool-down: 15s
+Completed: constant-20261030T082234Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/constant-20261030T082234Z-r1/measurement-window.env
+===== 15:25:51 START ramp r1 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T082551Z-r1
+Profile       : ramp
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T082551Z-r1
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793348781
+Measurement ends: 1793349382
+Cool-down: 15s
+Completed: ramp-20261030T082551Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T082551Z-r1/measurement-window.env
+===== 15:38:37 START ramp r2 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T083837Z-r2
+Profile       : ramp
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T083837Z-r2
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793349547
+Measurement ends: 1793350148
+Cool-down: 15s
+Completed: ramp-20261030T083837Z-r2
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T083837Z-r2/measurement-window.env
+===== 15:51:23 START ramp r3 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T085123Z-r3
+Profile       : ramp
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T085123Z-r3
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793350314
+Measurement ends: 1793350915
+Cool-down: 15s
+Completed: ramp-20261030T085123Z-r3
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T085123Z-r3/measurement-window.env
+===== 16:04:10 START burst r1 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T090410Z-r1
+Profile       : burst
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T090410Z-r1
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793351080
+Measurement ends: 1793351680
+Cool-down: 15s
+Completed: burst-20261030T090410Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T090410Z-r1/measurement-window.env
+===== 16:16:55 START burst r2 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T091655Z-r2
+Profile       : burst
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T091655Z-r2
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793351846
+Measurement ends: 1793352446
+Cool-down: 15s
+Completed: burst-20261030T091655Z-r2
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T091655Z-r2/measurement-window.env
+===== 16:29:41 START burst r3 http://stateless-api.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T092941Z-r3
+Profile       : burst
+Target        : http://stateless-api.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T092941Z-r3
+Target: http://stateless-api.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793352611
+Measurement ends: 1793353211
+Cool-down: 15s
+Completed: burst-20261030T092941Z-r3
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T092941Z-r3/measurement-window.env
+===== 16:42:26 START constant r1 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : constant-20261030T094226Z-r1
+Profile       : constant
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/constant-20261030T094226Z-r1
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793353377
+Measurement ends: 1793353407
+Cool-down: 15s
+Completed: constant-20261030T094226Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/constant-20261030T094226Z-r1/measurement-window.env
+===== 16:45:42 START ramp r1 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T094542Z-r1
+Profile       : ramp
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T094542Z-r1
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793353572
+Measurement ends: 1793354178
+Cool-down: 15s
+Completed: ramp-20261030T094542Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T094542Z-r1/measurement-window.env
+===== 16:58:33 START ramp r2 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T095833Z-r2
+Profile       : ramp
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T095833Z-r2
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793354343
+Measurement ends: 1793354948
+Cool-down: 15s
+Completed: ramp-20261030T095833Z-r2
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T095833Z-r2/measurement-window.env
+===== 17:11:23 START ramp r3 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T101123Z-r3
+Profile       : ramp
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T101123Z-r3
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793355113
+Measurement ends: 1793355719
+Cool-down: 15s
+Completed: ramp-20261030T101123Z-r3
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T101123Z-r3/measurement-window.env
+===== 17:24:14 START burst r1 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T102414Z-r1
+Profile       : burst
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T102414Z-r1
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793355884
+Measurement ends: 1793356484
+Cool-down: 15s
+Completed: burst-20261030T102414Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T102414Z-r1/measurement-window.env
+===== 17:36:59 START burst r2 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T103659Z-r2
+Profile       : burst
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T103659Z-r2
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793356649
+Measurement ends: 1793357250
+Cool-down: 15s
+Completed: burst-20261030T103659Z-r2
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T103659Z-r2/measurement-window.env
+===== 17:49:45 START burst r3 http://cpu-bound.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T104945Z-r3
+Profile       : burst
+Target        : http://cpu-bound.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T104945Z-r3
+Target: http://cpu-bound.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793357415
+Measurement ends: 1793358015
+Cool-down: 15s
+Completed: burst-20261030T104945Z-r3
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T104945Z-r3/measurement-window.env
+===== 18:02:30 START constant r1 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : constant-20261030T110230Z-r1
+Profile       : constant
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/constant-20261030T110230Z-r1
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793358181
+Measurement ends: 1793358211
+Cool-down: 15s
+Completed: constant-20261030T110230Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/constant-20261030T110230Z-r1/measurement-window.env
+===== 18:05:46 START ramp r1 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T110546Z-r1
+Profile       : ramp
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T110546Z-r1
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793358376
+Measurement ends: 1793358978
+Cool-down: 15s
+Completed: ramp-20261030T110546Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T110546Z-r1/measurement-window.env
+===== 18:18:33 START ramp r2 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T111833Z-r2
+Profile       : ramp
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T111833Z-r2
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793359143
+Measurement ends: 1793359744
+Cool-down: 15s
+Completed: ramp-20261030T111833Z-r2
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T111833Z-r2/measurement-window.env
+===== 18:31:19 START ramp r3 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : ramp-20261030T113119Z-r3
+Profile       : ramp
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T113119Z-r3
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793359909
+Measurement ends: 1793360511
+Cool-down: 15s
+Completed: ramp-20261030T113119Z-r3
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/ramp-20261030T113119Z-r3/measurement-window.env
+===== 18:44:06 START burst r1 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T114406Z-r1
+Profile       : burst
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T114406Z-r1
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793360676
+Measurement ends: 1793361276
+Cool-down: 15s
+Completed: burst-20261030T114406Z-r1
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T114406Z-r1/measurement-window.env
+===== 18:56:51 START burst r2 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T115651Z-r2
+Profile       : burst
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T115651Z-r2
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793361441
+Measurement ends: 1793362042
+Cool-down: 15s
+Completed: burst-20261030T115651Z-r2
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T115651Z-r2/measurement-window.env
+===== 19:09:37 START burst r3 http://microservices.10.160.4.43.sslip.io/
+Experiment ID : burst-20261030T120937Z-r3
+Profile       : burst
+Target        : http://microservices.10.160.4.43.sslip.io/
+Load Generator: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/loadgen/loadgen_v2.py
+Result        : /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T120937Z-r3
+Target: http://microservices.10.160.4.43.sslip.io/
+OK: target is reachable.
+Warm-up: 30s at 5 RPS
+Measurement starts: 1793362207
+Measurement ends: 1793362807
+Cool-down: 15s
+Completed: burst-20261030T120937Z-r3
+Measurement window: /home/ali/experimpent/cloud2023/kubernetes/research/cloud-dynamics-experiments/results/burst-20261030T120937Z-r3/measurement-window.env
+===== 19:22:22 SEMUA SELESAI

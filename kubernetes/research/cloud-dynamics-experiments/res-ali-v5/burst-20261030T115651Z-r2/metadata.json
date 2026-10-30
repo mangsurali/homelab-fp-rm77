@@ -1,0 +1,26 @@
+{
+  "experiment_id": "burst-20261030T115651Z-r2",
+  "profile": "burst",
+  "target_url": "http://microservices.10.160.4.43.sslip.io/",
+  "host_ip": "10.160.4.43",
+  "measurement_start_epoch": 1793361441,
+  "measurement_end_epoch": 1793362042,
+  "sample_interval_seconds": 1.0,
+  "warmup_seconds": 30,
+  "cooldown_seconds": 15,
+  "replicate": 2,
+  "application": {
+    "name": "microservices",
+    "architecture": "unspecified",
+    "replicas": "unspecified",
+    "cpu_request": "unspecified",
+    "cpu_limit": "unspecified",
+    "memory_request": "unspecified",
+    "memory_limit": "unspecified"
+  },
+  "runtime": {
+    "python": "3.11.2",
+    "platform": "Linux-6.1.0-54-amd64-x86_64-with-glibc2.36",
+    "load_generator": "loadgen_v2.py"
+  }
+}

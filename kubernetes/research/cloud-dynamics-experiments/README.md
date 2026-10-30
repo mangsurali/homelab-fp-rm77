@@ -115,7 +115,8 @@ cloud-dynamics-experiments/
 │   ├── run-and-collect.sh        <-- Automated experiment + metrics collection
 │   └── run-all-and-collect.sh    <-- Run all scenarios + collect metrics
 ├── loadgen/
-│   └── loadgen.py
+│   ├── loadgen.py                <-- V1 ThreadPool workload generator
+│   └── loadgen_v2.py             <-- V2 AsyncIO open-loop real-world generator
 └── results/
 ```
 

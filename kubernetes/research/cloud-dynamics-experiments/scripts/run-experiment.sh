@@ -31,6 +31,7 @@ CALLER_DURATION=${DURATION-}
 CALLER_RPS=${RPS-}
 CALLER_START_RPS=${START_RPS-}
 CALLER_END_RPS=${END_RPS-}
+CALLER_LOADGEN_SCRIPT=${LOADGEN_SCRIPT-}
 
 . "$CONFIG"
 . "$SCENARIO"
@@ -47,6 +48,10 @@ CALLER_END_RPS=${END_RPS-}
 [ -n "$CALLER_RPS" ] && RPS=$CALLER_RPS
 [ -n "$CALLER_START_RPS" ] && START_RPS=$CALLER_START_RPS
 [ -n "$CALLER_END_RPS" ] && END_RPS=$CALLER_END_RPS
+[ -n "$CALLER_LOADGEN_SCRIPT" ] && LOADGEN_SCRIPT=$CALLER_LOADGEN_SCRIPT
+
+LOADGEN_SCRIPT=${LOADGEN_SCRIPT:-loadgen.py}
+LOADGEN_BIN="$ROOT_DIR/loadgen/$LOADGEN_SCRIPT"
 
 HOST_IP=${HOST_IP:-127.0.0.1}
 TARGET_HOST=${TARGET_HOST:-app.${HOST_IP}.sslip.io}
@@ -80,12 +85,13 @@ LOG="$OUT/run.log"
 echo "Experiment ID : $EXPERIMENT_ID"
 echo "Profile       : $PROFILE"
 echo "Target        : $TARGET_URL"
+echo "Load Generator: $LOADGEN_BIN"
 echo "Result        : $OUT"
 
 "$ROOT_DIR/scripts/check-environment.sh"
 
 echo "Warm-up: ${WARMUP_SECONDS}s at ${WARMUP_RPS} RPS"
-python3 "$ROOT_DIR/loadgen/loadgen.py" \
+python3 "$LOADGEN_BIN" \
     --url "$TARGET_URL" \
     --profile constant \
     --duration "$WARMUP_SECONDS" \
@@ -122,7 +128,7 @@ case "$PROFILE" in
 esac
 
 # shellcheck disable=SC2086
-python3 "$ROOT_DIR/loadgen/loadgen.py" $ARGS "$@"
+python3 "$LOADGEN_BIN" $ARGS "$@"
 
 MEASUREMENT_END_EPOCH=$(date +%s)
 echo "Measurement ends: $MEASUREMENT_END_EPOCH"
@@ -156,7 +162,7 @@ meta = {
     "memory_request": "${MEMORY_REQUEST:-unspecified}",
     "memory_limit": "${MEMORY_LIMIT:-unspecified}"
   },
-  "runtime": {"python": platform.python_version(), "platform": platform.platform()}
+  "runtime": {"python": platform.python_version(), "platform": platform.platform(), "load_generator": "$LOADGEN_SCRIPT"}
 }
 with open("$OUT/metadata.json", "w") as f:
     json.dump(meta, f, indent=2)

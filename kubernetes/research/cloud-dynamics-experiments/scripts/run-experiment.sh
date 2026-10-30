@@ -3,6 +3,7 @@ set -eu
 
 ROOT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 CONFIG="$ROOT_DIR/config/experiment.env"
+LOADGEN_SCRIPT=loadgen_v2.py
 
 if [ "$#" -ne 1 ]; then
     echo "Usage: $0 scenarios/<scenario>.env" >&2
